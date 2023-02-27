@@ -9,3 +9,5 @@ RUN chmod -R a-w /var/www
 
 USER nobody
 CMD exec httpd -f -p 8080 -h /var/www
+
+STOPSIGNAL 9
