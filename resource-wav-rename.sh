@@ -1,5 +1,10 @@
 #!/bin/sh -e
 
+if [[ $(uname -s) != "Linux" ]] then
+    echo "このスクリプトはLinux上でしか実行できません"
+    exit 1
+fi
+
 cd resource
 
 dir_list=(*/)
@@ -25,17 +30,17 @@ read
 cd $directory
 # ディレクトリ内のファイルを列挙し、名前を変更する
 for file in *.wav; do
-	# ファイル名の拡張子を取得
-	ext="${file##*.}"
-	# __の部分を削除
-	name="${file##*_}"
-	name="${name%.*}"
-	name="${name/お知らせします/inform}"
-	name="${name/ちょうどを/60s}"
-	name="${name/分/m}"
-	name="${name/秒を/s}"
-	name="${name/時/h}"
-	newname="${name}.${ext}"
-	echo $directory/${newname}
-	mv "$file" "$newname"
+    # ファイル名の拡張子を取得
+    ext="${file##*.}"
+    # __の部分を削除
+    name="${file##*_}"
+    name="${name%.*}"
+    name="${name/お知らせします/inform}"
+    name="${name/ちょうどを/60s}"
+    name="${name/分/m}"
+    name="${name/秒を/s}"
+    name="${name/時/h}"
+    newname="${name}.${ext}"
+    echo $directory/${newname}
+    mv "$file" "$newname"
 done
