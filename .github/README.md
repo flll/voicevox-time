@@ -17,8 +17,10 @@
    ```
 
 # docker build|run
-![Docker Image Version (latest by date)](https://img.shields.io/docker/v/fjlli/voicevox-time?style=for-the-badge)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/fjlli/voicevox-time/1.1?style=for-the-badge)
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/fjlli/voicevox-time?style=for-the-badge)](https://hub.docker.com/r/fjlli/voicevox-time)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/fjlli/voicevox-time/1.1?style=for-the-badge)](https://hub.docker.com/r/fjlli/voicevox-time)
+
 ```
 docker build -t [tag] .
 docker run -d --rm -p 8080:8080 [tag]
