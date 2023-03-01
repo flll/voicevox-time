@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-if [[ $(uname -s) != "Linux" ]] then
+if [[ $(uname -s) != "Linux" ]]; then
     echo "このスクリプトはLinux上でしか実行できません"
     exit 1
 fi
@@ -27,7 +27,7 @@ echo "選択されたディレクトリ: $directory"
 echo "実行するにはエンターを押してください"
 read
 
-cd $directory
+cd ${directory}
 # ディレクトリ内のファイルを列挙し、名前を変更する
 for file in *.wav; do
     # ファイル名の拡張子を取得
@@ -41,6 +41,6 @@ for file in *.wav; do
     name="${name/秒を/s}"
     name="${name/時/h}"
     newname="${name}.${ext}"
-    echo $directory/${newname}
-    mv "$file" "$newname"
+    echo ${directory}${newname}
+    mv "${file}" "${newname}" || :
 done
